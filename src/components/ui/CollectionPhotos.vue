@@ -4,13 +4,5 @@
        <img id="middle" src="../assets/image/BUERE_JOHNRON1.png" class=" relative z-20 w-60 h-56 object-cover border rounded-md dark:border-white bg-green-500 transition-all hover:z-30 hover:scale-110"/>
        <img id="right" src="../assets/image/skills/bootstrap.png" class="absolute top-0 right-0 z-0 translate-y-6 rotate-12 w-52 h-60 object-cover border rounded-md dark:border-white bg-violet-500 transition-all hover:z-30 hover:scale-110"/>
     </div>
-</template>
-
-<script setup>
-
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+</template> 
  

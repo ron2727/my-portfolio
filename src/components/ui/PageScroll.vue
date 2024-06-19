@@ -18,7 +18,7 @@
 
 <script setup>
 
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const pageScroll = ref(null);
 
@@ -28,12 +28,10 @@ onMounted(() => {
         const scrollTop = window.scrollY; 
         if (scrollTop > projectSection.offsetTop) {
             pageScroll.value.classList.remove('hidden');
-            pageScroll.value.classList.add('flex'); 
-            // pageScroll.value.classList.add('rocket-in');
+            pageScroll.value.classList.add('flex');  
         } else {
             pageScroll.value.classList.add('hidden');
-            pageScroll.value.classList.remove('flex'); 
-            // pageScroll.value.classList.remove('rocket-in');
+            pageScroll.value.classList.remove('flex');  
         }
     })
 }) 
