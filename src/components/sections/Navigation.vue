@@ -23,7 +23,7 @@
                     </a>
                     <div class="absolute bottom-0 left-0 w-full h-0 transition-all duration-200 group-hover:h-0.5 bg-dark-secondary"></div>
                 </li>
-                <li class="pb-4 md:pb-0 md:ml-2 absolute md:static bottom-0 left-0 w-full md:w-min flex md:block justify-center">
+                <li class="pb-4 md:pb-0 md:ml-2 w-full md:w-min flex md:block justify-center">
                     <DarkModeToggle />
                 </li>
             </ul>
