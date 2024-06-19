@@ -2,7 +2,7 @@
   <SectionLayout id="experience">
       <template #section>Work Experience</template>
       <template #content>
-        <div class="work-experience grid grid-cols-1 lg:grid-cols-8 mt-8lg:mt-20">
+        <div class="work-experience grid grid-cols-1 lg:grid-cols-8 mt-8 lg:mt-20">
           <h6 class=" col-span-2 text-default text-sm md:text-xl font-medium dark:text-dark-default">Jan 2024 - Apr 2024</h6>
           <div id="company" class=" col-span-6 ">
             <h1 class=" text-lg md:text-xl font-bold text-default dark:text-dark-primary">Neksjob Corporation - Intern</h1>
