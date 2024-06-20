@@ -1,6 +1,6 @@
 <template> 
     <SectionLayout id="about">
-        <template #section>A little bit <br> about me</template>
+        <template #section>About me</template>
         <template #content>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="column-1">
