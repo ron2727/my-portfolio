@@ -16,14 +16,15 @@
             <a id="logo" href="/" class="absolute font-bold font-montserratAlternates md:static top-0 left-0 w-full md:w-max text-center md:text-left mt-20 md:mt-0 text-logo">
                 {{ logo }}
             </a>
-            <ul class="flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0 font-medium text-sm text-default">
-                <li class=" relative group" v-for="(nav, link) in navLinks">
-                    <a @click="isMobileNavActive = false" :href="`#${link}`" class="nav-link inline-block text-default text-sm py-3 px-5 transition-all duration-200 dark:text-dark-primary">
+            <ul class="flex flex-col md:flex-row justify-between items-center space-y-4 sm:space-y-5 md:space-y-0 w-full md:w-min font-medium text-sm text-default">
+                <li class=" relative group w-full md:w-max" v-for="(nav, link) in navLinks">
+                    <a @click="isMobileNavActive = false" :href="`#${link}`" class="nav-link inline-block w-full text-center text-sm py-6 md:py-3 px-5 transition-all duration-300 hover:bg-dark-secondary/10 hover:text-dark-secondary dark:text-dark-primary">
                         {{ nav }}
                     </a>
                     <div class="absolute bottom-0 left-0 w-full h-0 transition-all duration-200 group-hover:h-0.5 bg-dark-secondary"></div>
                 </li>
-                <li class="pb-4 md:pb-0 md:ml-2 w-full md:w-min flex md:block justify-center">
+               
+                <li class="pt-5 md:pt-0 md:ml-2 w-full md:w-min flex md:block justify-center">
                     <DarkModeToggle />
                 </li>
             </ul>
@@ -102,7 +103,11 @@ const removeActiveNav = () => {
 </script>
 
 <style scoped>
+.active {
+    color: #007bff !important;
+    background-color: rgb(0 123 255 / 0.1);
+}
 .active~div {
     height: 0.125rem;
-}
+} 
 </style>
