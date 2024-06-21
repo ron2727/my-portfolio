@@ -1,8 +1,15 @@
 <template>
-    <div class=" wrapper relative">
-       <img id="left" src="../../assets/image/BUERE_JOHNRON1.png" class=" absolute top-0 left-0 z-10 translate-y-12 -rotate-12 w-64 h-52 object-cover border rounded-md dark:border-white bg-white transition-all hover:z-30 hover:scale-110"/>
-       <img id="middle" src="../../assets/image/BUERE_JOHNRON1.png" class=" relative z-20 w-60 h-56 object-cover border rounded-md dark:border-white bg-green-500 transition-all hover:z-30 hover:scale-110"/>
-       <img id="right" src="../../assets/image/BUERE_JOHNRON1.png" class="absolute top-0 right-0 z-0 translate-y-6 rotate-12 w-52 h-60 object-cover border rounded-md dark:border-white bg-violet-500 transition-all hover:z-30 hover:scale-110"/>
+    <div class=" wrapper relative group w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
+      <div class="group relative z-40 w-full h-full">
+        <img id="middle" src="../../assets/image/BUERE_JOHNRON1.png" class=" relative z-0 w-full h-full object-cover grayscale"/>
+        <div class=" absolute top-0 left-0 w-full h-full bg-dark-secondary/5"></div>
+        <div class="absolute top-0 left-0 z-10 w-full h-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:h-full">
+            <img id="middle" src="../../assets/image/BUERE_JOHNRON1.png" class=" w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 object-cover"/>
+        </div>
+      </div>
+      <div class=" absolute top-0 left-0 z-30 w-full h-full bg-black/40 transition-transform duration-300 delay-200 group-hover:translate-x-2 group-hover:translate-y-2 dark:bg-dark-secondary/40"></div>
+      <div class=" absolute top-0 left-0 z-20 w-full h-full bg-black/30 transition-transform duration-300 delay-100 group-hover:translate-x-4 group-hover:-translate-y-2 dark:bg-dark-secondary/30"></div>
+      <div class=" absolute top-0 left-0 z-0 w-full h-full bg-black/20 transition-transform duration-300 group-hover:translate-x-6 group-hover:translate-y-4 dark:bg-dark-secondary/20"></div>
     </div>
 </template> 
  
