@@ -11,12 +11,6 @@
                 class=" group bg-default pb-1 pt-2 px-2.5 border border-default rounded-full transition-all duration-200 hover:border-dark-secondary hover:scale-110 dark:bg-dark-body hover:bg-dark-secondary dark:border-dark-secondary">
                 <i class='bx bxl-linkedin bx-xs text-white group-hover:text-white dark:text-dark-secondary'></i>
             </div>
-        </a>
-        <a href="https://web.facebook.com/profile.php?id=100010481264398" target="_blank">
-            <div
-                class=" group bg-default pb-1 pt-2 px-2.5 border border-default rounded-full transition-all duration-200 hover:border-dark-secondary hover:scale-110 dark:bg-dark-body hover:bg-dark-secondary dark:border-dark-secondary">
-                <i class='bx bxl-facebook bx-xs text-white group-hover:text-white dark:text-dark-secondary'></i>
-            </div>
-        </a>
+        </a> 
     </div>
 </template>

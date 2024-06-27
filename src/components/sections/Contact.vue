@@ -6,7 +6,7 @@
                 Whether you have a project in mind, need assistance with web development, or simply want to discuss
                 ideas, I'd love to hear from you.</p>
             <div class="email-link-wrapper group relative">
-                <a href="mailto:johnronbuere0627@gmail.com" class="email-link relative z-10 font-bold text-default text-sm md:text-lg dark:text-dark-default">kikobuere27@gmail.com</a>
+                <a href="mailto:johnronbuere0627@gmail.com" class="email-link relative z-10 font-bold text-default text-sm md:text-lg dark:text-dark-default">johnronbuere0627@gmail.com</a>
                 <div class=" absolute bottom-0 left-0 z-0 w-full h-0 transition-all duration-200 group-hover:h-1 bg-dark-secondary"></div>
             </div> 
             <SocialsLinks />
