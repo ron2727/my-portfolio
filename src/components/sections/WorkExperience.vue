@@ -11,7 +11,7 @@
               Collaborated to designed and developed a mobile-responsive web for applicants and clients to send messages and apply
               for jobs through forms
             </p>
-            <ListTags :tags="['HTML', 'CSS', 'JavaScript', 'Tailwind', 'Vue.js', 'Laravel']" />
+            <ListTags :tags="['HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'Vue.js', 'Laravel']" />
           </div>
         </div>
       </template>
