@@ -8,7 +8,7 @@
                     <div class="wrapper block sm:flex items-center justify-between">
                         <h6 class=" text-lg md:text-2xl font-bold dark:text-dark-primary">Church Web Portal</h6>
                         <div class="button-links space-x-3 mt-3 sm:mt-0">
-                            <a href="http://church.42web.io/" target="_blank" class=" inline-block px-4 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">
+                            <a href="https://church.42web.io/" target="_blank" class=" inline-block px-4 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">
                                 Demo</a>
                             <a href="https://github.com/ron2727/church-web-portal" target="_blank" class=" inline-block px-4 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">Code</a>
                         </div>
