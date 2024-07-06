@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class=" flex justify-center pt-10">
-                   <CollectionPhotos/>
+                   <Photo/>
                 </div>
             </div>
         </template>
@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import CollectionPhotos from '../ui/CollectionPhotos.vue';
+import Photo from '../ui/Photo.vue';
 import SectionLayout from '../layouts/SectionLayout.vue';
 </script> 
  

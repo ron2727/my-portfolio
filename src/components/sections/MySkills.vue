@@ -131,20 +131,6 @@
 </template>
 
 <script setup>
-import SectionLayout from '../layouts/SectionLayout.vue';
-import { ref } from 'vue'; 
-const mySkills = ref([
-['html', 'HTML'], 
-['css', 'CSS'], 
-['js', 'JavaScript'], 
-['php', 'PHP'], 
-['mysql', 'MySQL'], 
-['jquery', 'jQuery'], 
-['bootstrap', 'Bootstrap'], 
-['tailwind', 'Tailwind'], 
-['laravel', 'Laravel'], 
-['vue', 'Vue.js'], 
-['csharp', 'C#'], 
-['git', 'Git']])
+import SectionLayout from '../layouts/SectionLayout.vue'; 
 </script>
  
