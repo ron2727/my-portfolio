@@ -19,7 +19,7 @@ const image1 = ref(null)
 const image2 = ref(null)
 
 onMounted(() => {
-    const imagePath = `${window.location.href}/src/assets/image/skills/${props.image}`;
+    const imagePath = `${window.location.href}src/assets/image/skills/${props.image}`;
     image1.value.src = imagePath 
     image2.value.src = imagePath 
 })
