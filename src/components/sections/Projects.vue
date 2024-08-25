@@ -1,32 +1,33 @@
 <template>
     <SectionLayout id="projects">
         <template #section>Projects</template>
-        <template #content>
-            <div class="content-wrapper mt-10">
-                <div class=" space-y-3 md:space-y-7 text-default">
-                    <img src="../../assets/image/projects/web_portal.png" alt="portal" class=" w-full object-contain">
-                    <div class="wrapper block sm:flex items-center justify-between">
-                        <h6 class=" text-lg md:text-2xl font-bold dark:text-dark-primary">Church Web Portal</h6>
-                        <div class="button-links space-x-3 mt-3 sm:mt-0">
-                            <a href="https://church.42web.io/" target="_blank" class=" inline-block px-4 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">
-                                Demo</a>
-                            <a href="https://github.com/ron2727/church-web-portal" target="_blank" class=" inline-block px-4 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">Code</a>
-                        </div>
-                    </div>
-                    <p class=" text-sm md:text-base dark:text-dark-default">
+        <template #content> 
+            <Project 
+              image="web_portal.png"  
+              demo-link="https://church.42web.io/"
+              github-link="https://github.com/ron2727/church-web-portal"
+              :tags="['HTML', 'CSS', 'Bootstrap','JavaScript', 'JQuery', 'AJAX', 'PHP', 'MYSQL']">
+                <template #description>
                         Designed and developed mobile-responsive web application for a church. Features
                         include online booking for availing church services, event management for posting upcoming and
                         searching past events, and a forum for church members to interact and also monthly report for events and services.
-                    </p>
-                </div>
-                <ListTags :tags="['HTML', 'CSS', 'Bootstrap','JavaScript', 'JQuery', 'AJAX', 'PHP', 'MYSQL']" />
-            </div>
+                </template>
+            </Project>
+            <Project 
+              image="voting_system.png"  
+              demo-link="https://church.42web.io/"
+              github-link="https://github.com/ron2727/church-web-portal"
+              :tags="['Vue.js', 'Laravel', 'Tailwind', 'RESTful API', 'MySQL']">
+                <template #description>
+                    Designed and developed a single-page mobile reponsive voting system using Laravel for the backend and Vue.js for the frontend. This application is designed to streamline the election process by providing a user-friendly interface for voting, vote tallying, and report generation.
+                </template>
+            </Project>
         </template>
     </SectionLayout>
 </template>
 
 <script setup>
 import SectionLayout from '../layouts/SectionLayout.vue';
-import ListTags from '../ui/ListTags.vue';
+import Project from '../ui/Project.vue';
 </script>
  
