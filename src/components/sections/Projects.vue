@@ -13,10 +13,10 @@
                         searching past events, and a forum for church members to interact and also monthly report for events and services.
                 </template>
             </Project>
-            <Project 
+             <Project 
               image="voting_system.png"  
-              demo-link="https://church.42web.io/"
-              github-link="https://github.com/ron2727/church-web-portal"
+              demo-link="#"
+              github-link="https://github.com/ron2727/voting-system"
               :tags="['Vue.js', 'Laravel', 'Tailwind', 'RESTful API', 'MySQL']">
                 <template #description>
                     Designed and developed a single-page mobile reponsive voting system using Laravel for the backend and Vue.js for the frontend. This application is designed to streamline the election process by providing a user-friendly interface for voting, vote tallying, and report generation.
