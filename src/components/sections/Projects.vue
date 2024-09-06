@@ -3,6 +3,7 @@
         <template #section>Projects</template>
         <template #content> 
             <Project 
+              name="Church Web Portal"
               image="web_portal.png"  
               demo-link="https://church.42web.io/"
               github-link="https://github.com/ron2727/church-web-portal"
@@ -14,6 +15,7 @@
                 </template>
             </Project>
              <Project 
+              name="Voting System"
               image="voting_system.png"  
               demo-link="#"
               github-link="https://github.com/ron2727/voting-system"
