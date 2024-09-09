@@ -21,7 +21,17 @@
               github-link="https://github.com/ron2727/voting-system"
               :tags="['Vue.js', 'Laravel', 'Tailwind', 'RESTful API', 'MySQL']">
                 <template #description>
-                    Designed and developed a single-page mobile reponsive voting system using Laravel for the backend and Vue.js for the frontend. This application is designed to streamline the election process by providing a user-friendly interface for voting, vote tallying, and report generation.
+                    Designed and developed a single-page mobile reponsive voting system. This application is designed to streamline the election process by providing a user-friendly interface for voting, vote tallying, and report generation.
+                </template>
+            </Project>
+            <Project 
+              name="School Attendance System"
+              image="school_attendance.png"  
+              demo-link="#"
+              github-link="https://github.com/ron2727/school_attendance"
+              :tags="['Inertia', 'Vue.js', 'Laravel', 'Tailwind', 'MySQL']">
+                <template #description>
+                    Designed and developed a mobile-responsive, web-based school attendance management system using the VILT Stack. Teachers can efficiently mark student attendance for their assigned classes on a daily basis. The system also provides the functionality to export daily attendance records to PDF or Excel files, making reporting and record-keeping simple and convenient
                 </template>
             </Project>
         </template>
