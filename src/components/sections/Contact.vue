@@ -1,6 +1,6 @@
 <template>
     <section id="contact">
-        <div class=" max-w-xl mx-auto pt-30 pb-60 space-y-5 flex flex-col items-center">
+        <div class=" max-w-xl mx-auto pt-40 pb-60 space-y-5 flex flex-col items-center">
             <h1 class=" text-dark-secondary text-2xl md:text-5xl font-bold">Get in touch</h1>
             <p class=" px-4 text-sm text-center md:text-lg text-default dark:text-dark-default">I'm a recent graduate
                 eager to connect and explore new opportunities.</p> 
