@@ -75,15 +75,14 @@ const formErrorsValidator = ref({
 });
  
 
-const handleSubmit = async () => {  
-    const formDataObject = getFormData(); 
+const handleSubmit = async () => {   
     const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
     };
     if (!isFormHasError()) { 
         isSubmitting.value = true;
         try {
-            axios.post(
+           await axios.post(
                 "/",
                 encode({
                     "form-name": "contact",
