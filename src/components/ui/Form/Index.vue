@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="$emit('submit-form')"
+    <form @submit="$emit('submit-form', $event)"
           :name="name"
           :method="method"
           netlify

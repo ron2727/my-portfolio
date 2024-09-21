@@ -5,7 +5,7 @@
             <p class=" px-4 text-sm text-center md:text-lg text-default dark:text-dark-default">I'm a recent graduate
                 eager to connect and explore new opportunities.</p> 
             <div class="wrapper-form px-4 md:px-0 max-md:max-w-96 w-full">
-                <Form ref="form" @submit-form="handleSubmit($event)" name="contact">  
+                <Form ref="form" @submit-form="handleSubmit" name="contact">  
                     <Input v-model="formData.name" label="Name" name="name" :error="formErrors.name" />
                     <Input v-model="formData.email" label="Email" name="email" :error="formErrors.email" />
                     <TextArea v-model="formData.message" label="Message" name="message" :error="formErrors.message" />
@@ -72,23 +72,13 @@ const formErrorsValidator = ref({
 });
  
 
-const handleSubmit = async () => { 
-    const formDataObject = getFormData();
+const handleSubmit = async (e) => { 
     if (!isFormHasError()) { 
         isSubmitting.value = true;
-        try {
-            await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formDataObject).toString(),
-            })
-            alert('Message has been sent!');
-            clearForm();
-        } catch (error) {
-            alert('Message has not been sent');
-        } 
-        isSubmitting.value = false;
+        return
     }
+    
+    e.preventDefault();
 }
 
 const isFormHasError = () => {  
