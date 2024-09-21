@@ -6,6 +6,7 @@
                 eager to connect and explore new opportunities.</p> 
             <div class="wrapper-form px-4 md:px-0 max-md:max-w-96 w-full">
                 <Form @submit-form="handleSubmit" name="contact">  
+                    <input type="hidden" name="contact" value="contact" />
                     <input ref="botField" type="hidden" name="bot-field">
                     <Input v-model="formData.name" label="Name" name="name" :error="formErrors.name" />
                     <Input v-model="formData.email" label="Email" name="email" :error="formErrors.email" />
@@ -35,6 +36,7 @@ import TextArea from '../ui/Form/TextArea.vue';
 import Button from '../ui/Form/Button.vue';
 import Link from '../ui/Link.vue';
 import { ref } from 'vue';
+import axios from 'axios';
 
 const isSubmitting = ref(false);
 const botField = ref(null);
@@ -74,15 +76,21 @@ const formErrorsValidator = ref({
  
 
 const handleSubmit = async () => {  
-    const formDataObject = getFormData();
+    const formDataObject = getFormData(); 
+    const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+    };
     if (!isFormHasError()) { 
         isSubmitting.value = true;
         try {
-            await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formDataObject).toString(),
-            })
+            axios.post(
+                "/",
+                encode({
+                    "form-name": "contact",
+                    ...formData.value
+                }),
+                axiosConfig
+            );
             alert('Message has been sent!');
             clearForm();
         } catch (error) {
@@ -134,5 +142,13 @@ const getFormData = () => {
     } 
     formObject.append('bot-field', botField.value.value);
     return formData;
+}
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(
+            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
 }
 </script>
