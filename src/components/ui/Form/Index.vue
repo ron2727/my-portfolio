@@ -1,8 +1,9 @@
 <template>
-    <form @submit="$emit('submit-form', $event)"
+    <form @submit.prevent="$emit('submit-form')"
           :name="name"
           :method="method"
-          netlify 
+          data-netlify="true"
+          data-netlify-honeypot="bot-field" 
           class=" w-full space-y-1 md:space-y-4">    
           <slot/>
     </form>

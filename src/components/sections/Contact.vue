@@ -5,7 +5,8 @@
             <p class=" px-4 text-sm text-center md:text-lg text-default dark:text-dark-default">I'm a recent graduate
                 eager to connect and explore new opportunities.</p> 
             <div class="wrapper-form px-4 md:px-0 max-md:max-w-96 w-full">
-                <Form ref="form" @submit-form="handleSubmit" name="contact">  
+                <Form @submit-form="handleSubmit" name="contact">  
+                    <input ref="botField" type="hidden" name="bot-field">
                     <Input v-model="formData.name" label="Name" name="name" :error="formErrors.name" />
                     <Input v-model="formData.email" label="Email" name="email" :error="formErrors.email" />
                     <TextArea v-model="formData.message" label="Message" name="message" :error="formErrors.message" />
@@ -36,7 +37,7 @@ import Link from '../ui/Link.vue';
 import { ref } from 'vue';
 
 const isSubmitting = ref(false);
-const form = ref(null);
+const botField = ref(null);
 const formData = ref({
     name: '',
     email: '',
@@ -72,13 +73,24 @@ const formErrorsValidator = ref({
 });
  
 
-const handleSubmit = async (e) => { 
+const handleSubmit = async () => {  
+    const formDataObject = getFormData();
     if (!isFormHasError()) { 
         isSubmitting.value = true;
-        return
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formDataObject).toString(),
+            })
+            alert('Message has been sent!');
+            clearForm();
+        } catch (error) {
+            alert('Message has not been sent');
+        } 
+        isSubmitting.value = false;
     }
-    
-    e.preventDefault();
+     
 }
 
 const isFormHasError = () => {  
@@ -120,7 +132,7 @@ const getFormData = () => {
     for (const key in formData.value) { 
         formObject.append(key, formData.value[key]);
     } 
-    formObject.append('contact', 'contact');
+    formObject.append('bot-field', botField.value.value);
     return formData;
 }
 </script>
