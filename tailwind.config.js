@@ -19,6 +19,7 @@ export default {
         logo: '#42B883',
         dark:{
           body: '#171c28', 
+          bodySecondary: '#252d40',
           default: '#afafbf',
           defaultSecondary: '#AFAFAF',
           primary: '#e7e7e7', 
