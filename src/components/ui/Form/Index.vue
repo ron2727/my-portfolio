@@ -2,8 +2,7 @@
     <form @submit="$emit('submit-form', $event)"
           :name="name"
           :method="method"
-          netlify
-          data-netlify-honeypot="bot-field"
+          netlify 
           class=" w-full space-y-1 md:space-y-4">    
           <slot/>
     </form>
