@@ -3,10 +3,9 @@
         <div class=" max-w-xl mx-auto pt-30 pb-60 space-y-5 flex flex-col items-center">
             <h1 class=" text-dark-secondary text-2xl md:text-5xl font-bold">Get in touch</h1>
             <p class=" px-4 text-sm text-center md:text-lg text-default dark:text-dark-default">I'm a recent graduate
-                eager to connect and explore new opportunities.</p>
-
+                eager to connect and explore new opportunities.</p> 
             <div class="wrapper-form px-4 md:px-0 max-md:max-w-96 w-full">
-                <Form ref="form" @submit-form="handleSubmit($event)" name="contact">
+                <Form ref="form" @submit-form="handleSubmit($event)" name="contact">  
                     <Input v-model="formData.name" label="Name" name="name" :error="formErrors.name" />
                     <Input v-model="formData.email" label="Email" name="email" :error="formErrors.email" />
                     <TextArea v-model="formData.message" label="Message" name="message" :error="formErrors.message" />
@@ -41,7 +40,7 @@ const form = ref(null);
 const formData = ref({
     name: '',
     email: '',
-    message: ''
+    message: '', 
 });
 
 const formErrors = ref({
@@ -130,8 +129,8 @@ const getFormData = () => {
     const formObject = new FormData();
     for (const key in formData.value) { 
         formObject.append(key, formData.value[key]);
-    }
-
+    } 
+    formObject.append('contact', 'contact');
     return formData;
 }
 </script>
