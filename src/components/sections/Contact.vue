@@ -1,5 +1,7 @@
 <template>
     <section id="contact">
+        <Alert v-if="alertType == 'success'" @close-alert="alertType = null" :type="alertType" message="Message sent successfully!" :count-down="8000"/>
+        <Alert v-if="alertType == 'error'" @close-alert="alertType = null" :type="alertType" message="Message not sent." :count-down="8000"/>
         <div class=" max-w-xl mx-auto pt-40 pb-60 space-y-5 flex flex-col items-center">
             <h1 class=" text-dark-secondary text-2xl md:text-5xl font-bold">Get in touch</h1>
             <p class=" px-4 text-sm text-center md:text-lg text-default dark:text-dark-default">I'm a recent graduate
@@ -11,7 +13,7 @@
                     <Input v-model="formData.email" label="Email" name="email" :error="formErrors.email" />
                     <TextArea v-model="formData.message" label="Message" name="message" :error="formErrors.message" />
                     <Button btnAlign="right" :processing="isSubmitting">Submit</Button>
-                </Form>
+                </Form> 
             </div>
             <div class="wrapper-socials w-full pt-20 px-4 md:px-0">
                 <div class=" w-full flex items-center space-x-5 md:space-x-10">
@@ -36,9 +38,10 @@ import Button from '../ui/Form/Button.vue';
 import Link from '../ui/Link.vue';
 import { ref } from 'vue';
 import axios from 'axios';
+import Alert from '../ui/Alert.vue';
 
 const isSubmitting = ref(false);
-const botField = ref(null);
+const alertType = ref(null);
 const formData = ref({
     name: '',
     email: '',
@@ -54,13 +57,14 @@ const formErrors = ref({
 const formErrRules = ref({
     name: ['letter', 'required'],
     email: ['email', 'required'],
-    message: ['required']
+    message: ['required', 'max:1500']
 });
 
 const formErrMessages = ref({
     required: (field) => `The ${field} is required`,
     letter: (field) => `The ${field} should contain letters only`,
     email: (field) => `The ${field} is invalid`,
+    max: (field, len) => `The ${field} should be less than or equal to ${len} characters`,
 });
 
 const formErrorsValidator = ref({
@@ -71,6 +75,7 @@ const formErrorsValidator = ref({
     },
     letter: (value) => !(/^[A-Za-z\s]+$/).test(value),
     email: (value) => !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(value),
+    max: (value, len) => value.trim().length > len,
 });
  
 
@@ -79,7 +84,7 @@ const handleSubmit = async () => {
     formData.value.access_key = WEB3FORMS_ACCESS_KEY; 
     if (!isFormHasError()) { 
         isSubmitting.value = true;
-        try {
+        try { 
             await axios.post(
                 "https://api.web3forms.com/submit",
                 JSON.stringify(formData.value),
@@ -90,10 +95,12 @@ const handleSubmit = async () => {
                    }
                 }
             );
-            alert('Message has been sent!');
+            alertType.value = 'success';
             clearForm();
         } catch (error) {
-            alert('Message has not been sent');
+            console.log(error);
+            
+            alertType.value = 'error';;
         } 
         isSubmitting.value = false;
     }
@@ -105,10 +112,19 @@ const isFormHasError = () => {
     clearError();
     for (const field in formErrRules.value) { 
         for (let i = 0; i < formErrRules.value[field].length; i++) { 
-            const rule = formErrRules.value[field][i]; 
-            const invalid = formErrorsValidator.value[rule](formData.value[field])
-            if (invalid) { 
-                formErrors.value[field] = formErrMessages.value[rule](field);
+            let rule = formErrRules.value[field][i];
+            const ruleSplit = rule.split(':');
+            let invalid = null;
+            if (ruleSplit.length === 1) {
+                invalid = formErrorsValidator.value[rule](formData.value[field]); 
+                if (invalid) {
+                    formErrors.value[field] = formErrMessages.value[rule](field);
+                }
+            } else {
+                invalid = formErrorsValidator.value[ruleSplit[0]](formData.value[field], ruleSplit[1]);
+                if (invalid) {
+                    formErrors.value[field] = formErrMessages.value[ruleSplit[0]](field, ruleSplit[1]);
+                }
             }
         } 
     } 
