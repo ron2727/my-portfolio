@@ -74,20 +74,21 @@ const formErrorsValidator = ref({
 });
  
 
-const handleSubmit = async () => {   
-    const axiosConfig = {
-        header: { "Content-Type": "application/x-www-form-urlencoded" }
-    };
+const handleSubmit = async () => {  
+    const WEB3FORMS_ACCESS_KEY = "83f0fe4f-fc48-4300-bad7-37d8359988c4";  
+    formData.value.access_key = WEB3FORMS_ACCESS_KEY; 
     if (!isFormHasError()) { 
         isSubmitting.value = true;
         try {
-           await axios.post(
-                "/",
-                encode({
-                    "form-name": "contact",
-                    ...formData.value
-                }),
-                axiosConfig
+            await axios.post(
+                "https://api.web3forms.com/submit",
+                JSON.stringify(formData.value),
+                {
+                   headers: {
+                       "Content-Type": "application/json",
+                        Accept: "application/json",
+                   }
+                }
             );
             alert('Message has been sent!');
             clearForm();
@@ -96,7 +97,8 @@ const handleSubmit = async () => {
         } 
         isSubmitting.value = false;
     }
-     
+
+    delete formData.value.access_key;
 }
 
 const isFormHasError = () => {  
@@ -132,21 +134,5 @@ const clearForm = () => {
         formData.value[key] = '';
     }
 } 
-
-const getFormData = () => {
-    const formObject = new FormData();
-    for (const key in formData.value) { 
-        formObject.append(key, formData.value[key]);
-    } 
-    formObject.append('bot-field', botField.value.value);
-    return formData;
-}
-
-const encode = (data) => {
-    return Object.keys(data)
-        .map(
-            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join("&");
-}
+  
 </script>
