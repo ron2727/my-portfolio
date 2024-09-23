@@ -12,7 +12,7 @@
                 </div>
                 <div class="content md:flex-1">
                     <div v-for="project in projectCollection" :key="project.id">
-                        <Project v-if="project.name === activeTab"
+                        <Project v-show="project.name === activeTab"
                                  :name="project.name" 
                                  :image="project.image" 
                                  :demo-link="project.demoLink"
