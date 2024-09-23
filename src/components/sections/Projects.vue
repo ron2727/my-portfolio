@@ -3,7 +3,7 @@
         <template #section>Projects</template>
         <template #content>
             <div class=" flex flex-col md:flex-row gap-x-4 mt-20">
-                <div class="side-nav w-56">
+                <div class="side-nav flex md:block w-full md:w-56 overflow-auto md:overflow-x-hidden">
                    <TabLink v-for="{tab, id} in projects()" 
                             :text="tab" 
                             :key="id" 
@@ -82,3 +82,9 @@ const sectActiveTab = (tab) => {
 }
 </script>
  
+
+<style>
+.side-nav::-webkit-scrollbar {
+  height: 0px;
+} 
+</style>
