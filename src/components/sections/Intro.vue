@@ -10,7 +10,7 @@
                 <h1 class=" max-w-2xl leading-normal text-sm sm:text-lg">I'm a recent graduate with a Bachelor of Science in
                     Information System. With a passion for both front-end and back-end development, I thrive on building dynamic, functional and user-friendly web</h1>
                 <div class="flex items-center py-10">
-                    <a href="https://drive.google.com/file/d/1gnxh9zLfr3sPco5JTZJxgHNythXh_JGf/view?usp=sharing" target="_blank" class=" inline-block px-4 mr-10 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">
+                    <a href="https://drive.google.com/file/d/1ZYDhLPs4cy6vEQ0ysdMPsLYxcKMEf6U9/view?usp=sharing" target="_blank" class=" inline-block px-4 mr-10 border border-dark-secondary text-dark-secondary text-xs lg:text-sm text-center font-medium py-2 lg:py-3 transition-colors duration-200 hover:text-white hover:border-dark-secondary hover:bg-dark-secondary dark:text-dark-secondary dark:border-dark-secondary">
                         Resume
                     </a>
                      <SocialLinks />
