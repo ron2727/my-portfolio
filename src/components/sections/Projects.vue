@@ -65,6 +65,15 @@ const projectCollection = ref([
         tags: ['Inertia', 'Vue.js', 'Laravel', 'Tailwind', 'MySQL'],
         description: 'Designed and developed a mobile-responsive, web-based school attendance management system using the VILT Stack. Teachers can efficiently mark student attendance for their assigned classes on a daily basis. The system also provides the functionality to export daily attendance records to PDF or Excel files, making reporting and record-keeping simple and convenient'
     },
+    {
+        id: 4,
+        name: 'Chat Web App',
+        image: 'chat_app.png',
+        demoLink: '#',
+        githubLink: 'https://github.com/ron2727/chat_app',
+        tags: ['Laravel', 'Vue.js', 'Pusher', 'Tailwind', 'RESTful API', 'MySQL'],
+        description: 'This chat app allows users to talk to others who are currently online. To start a conversation, first create a new group chat. It will then be added to the list of available group chats, and anyone can join in.'
+    },
 ])
 
 
