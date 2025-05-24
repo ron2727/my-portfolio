@@ -42,7 +42,7 @@ const projectCollection = ref([
         id: 1,
         name: 'Church Web Portal',
         image: 'web_portal.png',
-        demoLink: 'https://church.42web.io/',
+        demoLink: '#',
         githubLink: 'https://github.com/ron2727/church-web-portal',
         tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'JQuery', 'AJAX', 'PHP', 'MYSQL'],
         description: 'Designed and developed mobile-responsive web application for a church. Features include online booking for availing church services, event management for posting upcoming and searching past events, and a forum for church members to interact and also monthly report for events and services.'
